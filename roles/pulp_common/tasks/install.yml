@@ -9,6 +9,7 @@
       when:
         - __pulp_os_family == 'RedHat'
         - ansible_facts.distribution_major_version | int == 8
+        - pulp_pkg_name_prefix != 'python-3.11'
       changed_when:
         - python_module_enable.stdout is defined
         - "'Enabling module streams' in python_module_enable.stdout"
