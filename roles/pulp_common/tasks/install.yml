@@ -3,6 +3,9 @@
   become: true
   block:
 
+    - name: Test pcreech module instead
+      command: echo pcreech
+
     - name: Enable Python module stream {{ pulp_pkg_name_prefix[:-1] }}
       command: dnf -y module enable {{ pulp_pkg_name_prefix[:-1] }}
       register: python_module_enable
