@@ -25,7 +25,7 @@ LimitNOFILE=524288
 
 # timeout is needed Pulp to service its 1st request on extremely slow
 # machines, such as qemu-emulated 2-core machines
-ExecStart={{ __pulp_daemons_dir }}/pulpcore-api \
+ExecStart=/usr/bin/pulpcore-api \
           --name pulp-api \
           --bind '{{ pulp_api_bind }}' \
           --workers {{ pulp_api_workers }} \
